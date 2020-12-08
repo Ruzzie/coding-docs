@@ -3,12 +3,74 @@
 This exercise is aimed to practice OO concepts in combination with Inversion of Control / Dependency Inversion.
 
 .Constraints
-- Each class / struct in a separate project; A project can contain: 1 class / struct, 1 or more interfaces and 1 or more enums;
-- Each (public) function in a separate class
-- No (explicit) casting
-- No static methods
-- Your test project can be a single project
-- Use TDD
+* Each class / struct in a separate project; A project can contain: 1 class / struct, 1 or more interfaces and 1 or more enums;
+* Each (public) function in a separate class
+* No (explicit) casting
+* No static methods
+* No constructor calling `new Class()` statements in methods except for:
+**  your test methods (outside callers), 
+** or Factory Patterns
+** Poco's /structs and primitive types (Poco's are data objects, that only contain getters and setters)
+* Classes can only depend on interfaces and dependencies can only be passed to the constructor or as a parameter
+
+.example
+[source csharp]
+----
+class MyPoco
+{
+    int Id   {get; set;}
+    int Name {get; set;}
+}
+
+class MyTextReaderBadExample
+{
+    public string Read()
+    {
+        //Not Allowed
+        return new StringReader("Hello").ReadLine();
+    }    
+}
+
+class MyTextReaderGoodExampleA
+{
+    private IStringReader _reader;
+
+    //Allowed
+    //  Dependency in the constructor as an interface :)
+    public MyTextReaderGoodExample(IStringReader reader)
+    {
+        _reader = reader;
+    }
+    
+    public string Read()
+    {
+        //Allowed
+        return _reader.ReadLine();
+    } 
+
+    public MyPoco ReadToPoco()
+    {
+        //Allowed
+        // creating a Poco with a constructor inside a method
+        return new MyPoco { id = 1, Name = _reader.ReadLine() };
+    }     
+}
+
+class MyTextReaderGoodExampleB
+{        
+    //Allowed
+    public string Read(IStringReader reader)
+    {
+        //Allowed
+        return reader.ReadLine();
+    } 
+}
+----
+
+
+
+* Your test project can be a single project
+* Use TDD
 
 
 == Level 1 Exercise
