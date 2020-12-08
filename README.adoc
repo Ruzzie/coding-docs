@@ -1,0 +1,5 @@
+:toc: preamble
+= Coding docs
+
+
+link:Exercises/OO-DEP-KATA.adoc[OO Dependency Kata with Game of Life]

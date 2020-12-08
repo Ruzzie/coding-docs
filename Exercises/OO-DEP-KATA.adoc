@@ -1,0 +1,63 @@
+= OO and dependency control Kata
+
+This exercise is aimed to practice OO concepts in combination with Inversion of Control / Dependency Inversion.
+
+.Constraints
+- Each class / struct in a separate project; A project can contain: 1 class / struct, 1 or more interfaces and 1 or more enums;
+- Each (public) function in a separate class
+- No (explicit) casting
+- No static methods
+- Your test project can be a single project
+- Use TDD
+
+
+== Level 1 Exercise
+
+No interaction, almost no state
+
+== Level 2 Exercise
+
+More state, variation based on config 
+
+== Level 3 Exercise
+
+Interaction, input and output
+
+[IMPORTANT]
+Think carefully about the naming of your 'namespaces' of your project names, modules and classes, and do not be afraid to improve them continually during the exercise.
+
+
+=== Game of Life
+* Read a Game of Life initial state from a text file
+** where living cells are denotes as `#` and dead cells as `~`
+* The default algorithm is the Game of Life algorithm, look it up
+
+.game.txt
+[source]
+----
+~~~~###~~~~
+~~~~###~~~~
+~~~~###~~~~
+~~~~###~~~~
+~~~~###~~~~
+~~~~###~~~~
+~~~~###~~~~
+~~~~###~~~~
+~~~~###~~~~
+~~~~###~~~~
+~~~~###~~~~
+----
+
+* The grid is as wide as the widest line
+* When a line is incomplete (width is smaller than a previous maximum width line) it can be filled with dead cells
+* A space can also be interpeted as a dead cell
+* A grid can be rectangular
+
+* The maximum number of of generations to run can be given as a parameter. When all the cells are dead, the simulation must stop.
+* The output of the simulation can be written to a file. Where the generation number is in the file name.
+* The output of the next generation can be written to the screen
+** (bonus) Where living cells are colored green and dead cells red
+* An alternative algorithm implementation can be given; Users must be able to provide a custom implementation
+* (bonus) Replay a simulation from a file to the screen
+
+
