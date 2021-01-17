@@ -1,0 +1,11 @@
+pEncoder : P -> Encode.Value
+pEncoder p =
+    case p of
+        A valueParam ->
+            Encode.int valueParam.value
+
+        B dataRangeParam ->
+            Encode.object
+                [ ( "from", Encode.string dataRangeParam.from )
+                , ( "to", Encode.string dataRangeParam.from )
+                ]
