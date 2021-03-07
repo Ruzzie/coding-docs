@@ -6,4 +6,5 @@
 :toclevels: 2
 :numbered:
 
-include::Exercises/OO-DEP-KATA.adoc[OO Dependency Kata with Game of Life]
+include::Exercises/OO-DEP-KATA.adoc[]
+include::index.adoc[]
