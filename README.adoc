@@ -1,5 +1,9 @@
-:toc: preamble
 = Coding docs
+:toc: preamble
+:doctype: book
+:lang: en
+:toc: left
+:toclevels: 2
+:numbered:
 
-
-link:Exercises/OO-DEP-KATA.adoc[OO Dependency Kata with Game of Life]
+include::Exercises/OO-DEP-KATA.adoc[OO Dependency Kata with Game of Life]
