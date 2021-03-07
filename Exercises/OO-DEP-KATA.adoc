@@ -1,4 +1,4 @@
-= OO and dependency control Kata
+== OO and dependency control Kata
 
 This exercise is aimed to practice OO concepts in combination with Inversion of Control / Dependency Inversion.
 
@@ -75,15 +75,15 @@ class MyTextReaderGoodExampleB
 * Use TDD
 
 
-== Level 1 Exercise
+=== Level 1 Exercise
 
 No interaction, almost no state
 
-== Level 2 Exercise
+=== Level 2 Exercise
 
 More state, variation based on config
 
-== Level 3 Exercise
+=== Level 3 Exercise
 
 Interaction, input and output
 
@@ -91,7 +91,7 @@ Interaction, input and output
 Think carefully about the naming of your 'namespaces' of your project names, modules and classes, and do not be afraid to improve them continually during the exercise.
 
 
-=== Game of Life
+==== Game of Life
 * Read a Game of Life initial state from a text file
 ** where living cells are denotes as `#` and dead cells as `~`
 * The default algorithm is the Game of Life algorithm, look it up
